@@ -63,7 +63,9 @@ const playAgain = () => {
           ***********************************
           ***********************************
 
-            Push ctrl + c to exit
+                Push ctrl + c to exit
+
+          Then type nodemon app.js to replay
 
           ***********************************
           ***********************************
@@ -126,30 +128,35 @@ const gameOver = (num,answer) => {
 }
 
 const askQuestion = (v,i) => {
-    const attr = Object.values(v)
-    inquirer.prompt([{
-        type: "confirm",
-        name: 'question',
-        message: `${formatQuestion(v)}?`,
-        choices: ["Yes","No"]
-    }]).then((answers) => {
-        let remaining 
-        if(answers.question === true){
-            const toBeRemoved = []
-            const matches = attr[0].forEach((x,i) => {
-                x === 1 ? null : toBeRemoved.push(i)
-                remaining =  removePossibilities(toBeRemoved)
-            })
-        }
-        else{
-            const matches = attr[0].forEach((x,i) => {
+   if(v === null || v === undefined){
+      gameOver(0)
+   }
+   else{
+      const attr = Object.values(v)
+      inquirer.prompt([{
+          type: "confirm",
+          name: 'question',
+          message: `${formatQuestion(v)}?`,
+          choices: ["Yes","No"]
+      }]).then((answers) => {
+          let remaining 
+          if(answers.question === true){
               const toBeRemoved = []
-                x === 0 ? null : toBeRemoved.push(i)
-                remaining = removePossibilities(toBeRemoved)
-            })
-        }
-        remaining.length === 1 ? gameOver(1,remaining[0]) : remaining.length === 0 ? gameOver(0) :askQuestion(attributes[i+1],i+1)
-    })    
+              const matches = attr[0].forEach((x,i) => {
+                  x === 1 ? null : toBeRemoved.push(i)
+                  remaining =  removePossibilities(toBeRemoved)
+              })
+          }
+          else{
+              const matches = attr[0].forEach((x,i) => {
+                const toBeRemoved = []
+                  x === 0 ? null : toBeRemoved.push(i)
+                  remaining = removePossibilities(toBeRemoved)
+              })
+          }
+          remaining.length === 1 ? gameOver(1,remaining[0]) : remaining.length === 0 ? gameOver(0) :askQuestion(attributes[i+1],i+1)
+      }) 
+   }
 }
 
 

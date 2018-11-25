@@ -6,3 +6,5 @@
 #### think of an animal
 #### run the command nodemon app.js 
 #### answer the questions when prompted 
+
+### this repo also contains examples of various other algorithms

@@ -162,10 +162,9 @@
 
 // askQuestion(attributes[0],0)
 
+//Algorithms
 
-
-
-
+// https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //BINARY SEARCH ALGO
@@ -334,8 +333,23 @@ const isPerm = (a) => {
 }
 
 const permutation = isPerm(perm)
-console.log('Is Permutation',permutation)
+// console.log('Is Permutation',permutation)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+
+// const int = [1,2,3,4,5,6,7,8,9,10]
+
+// const findMissing = (a) => {
+//     const sort = a.sort((a,b) => {return a - b})
+//     let r 
+    
+//     isPerm()
+// } 
+
+// const isMissing = findMissing(int)
+console.log(isMissing,'Is missing')
 
 

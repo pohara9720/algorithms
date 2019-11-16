@@ -162,9 +162,8 @@ console.log('Number of jumps', jumpNumber)
 const perm = [1, 2, 3, 4, 5, 6, 7, 8]
 
 const isPerm = (a) => {
-    const sort = a.sort((a, b) => { return a - b })
-    let verdict
-    sort.map((x, i) => sort[i] - sort[i - 1] != 1 ? verdict = false : verdict = true)
+    const sort = a.sort((a, b) => a - b)
+    const verdict = sort.map((x, i) => sort[i] - sort[i - 1] != 1)
     return verdict
 }
 

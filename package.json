@@ -1,20 +1,19 @@
 {
-  "name": "20Q",
+  "name": "Algorithms",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Algorithm practice",
+  "main": "algorithms.js",
   "license": "ISC",
+  "scripts": {
+    "test": "yarn test"
+  },
   "dependencies": {
     "jest": "^24.9.0",
     "nodemon": "^1.18.6"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
-    "eslint-plugin-node": "^10.0.0"
+    "eslint-plugin-node": "^10.0.0",
+    "husky": "^3.0.9"
   }
 }

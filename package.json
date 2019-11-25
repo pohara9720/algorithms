@@ -5,7 +5,8 @@
   "main": "algorithms.js",
   "license": "ISC",
   "scripts": {
-    "test": "yarn test"
+    "test": "yarn test",
+    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/"
   },
   "dependencies": {
     "jest": "^24.9.0",

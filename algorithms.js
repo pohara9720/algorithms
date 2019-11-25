@@ -176,12 +176,12 @@ console.log('Is Permutation', permutation)
 const brackets = "({(()))}}"
 
 const validateBrackets = (string) => {
-    const isValidBracket = (value, array) => array.includes(value)
-
+    const isOpening = (val) => ['(', '{', '['].includes(val)
+    const isClosing = (val) => [')', '}', ']'].includes(val)
     return !string.split('').reduce((acc, current) =>
-        isValidBracket(current, ['(', '{', '[']) ?
+        isOpening(current) ?
             ++acc :
-            isValidBracket(current, [')', '}', ']']) ?
+            isClosing(current) ?
                 --acc :
                 acc,
         0);

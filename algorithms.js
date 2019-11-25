@@ -172,5 +172,26 @@ console.log('Is Permutation', permutation)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Based on string decide if input is valid
+const brackets = "({(()))}}"
+
+const validateBrackets = (string) => {
+    const isValidBracket = (value, array) => array.includes(value)
+
+    return !string.split('').reduce((acc, current) =>
+        isValidBracket(current, ['(', '{', '[']) ?
+            ++acc :
+            isValidBracket(current, [')', '}', ']']) ?
+                --acc :
+                acc,
+        0);
+}
+
+const isValidBracketInput = validateBrackets(brackets)
+console.log('is valid input', isValidBracketInput)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 

@@ -1,0 +1,193 @@
+*************************************
+BIG O NOTATION
+*************************************
+
+ NOTE A way to talk formally about how the runtime grows as the inputs grow
+
+ * Comparing code and its performance to other piece of code
+
+ SECTION EXAMPLE FUNCTIONS
+
+ 1. Sum
+
+const sum = array => {
+    let total = 0
+    for (let i = 0; i < array.length; i++) {
+        total += array[i]
+    }
+    return total
+}
+
+ 2. Double
+
+const double = array => {
+    let newArray = []
+    for (let i = 0; i < array.length; i++) {
+        newArray.push(2 * array[i])
+    }
+    return newArray
+}
+
+3. Log at least 5
+
+const logAtLeast5 = n => {
+    for (let i = 0; i <= Math.max(5, n); i++) {
+        console.log(i)
+    }
+}
+
+4. Log at most 5
+
+const logAtMost5 = n => {
+    for (let i = 0; i <= Math.min(5, n); i++) {
+        console.log(i)
+    }
+}
+
+ 5. Print all pairs 
+
+const printAllPairs = n => {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            console.log(i, j)
+        }
+    }
+}
+
+ 6. Count up and down
+
+const upAndDown = n => {
+    console.log('Going up')
+    for (let i = 0; i < n; i++) {
+        console.log(i)
+    }
+    console.log('Going down')
+    for (let j = n - 1; j >= 0; j--) {
+        console.log(j)
+    }
+}
+
+
+ 7. Sum of numbers from 1 and up to n
+
+const addUp1 = n => {
+    let total = 0
+    for (let i = 1; i <= n; i++) {
+        total += i
+    }
+    return total
+}
+
+const addUp2 = n => n * (n + 1) / 2
+
+Both implementations work. Which is better?
+
+SECTION Determining execution speeds
+
+const executionTime = (func) => {
+    const time = process.hrtime()
+    func(1000000)
+    const diff = process.hrtime(time)
+    return `Implentation took ${diff[0]} seconds and ${diff[1]} nanoseconds to execute`
+}
+
+console.log(executionTime(addUp1))
+console.log(executionTime(addUp2))
+
+Problems with time 
+ - Different AND same machine will record different times
+ For fast algorithms, speed measurements might not be fast enough
+
+ NOTE Instead of measuring seconds and nanoseconds you can count the amount of operations the function has to run. This will provide more consistency
+ const addUp2 = n => n * (n + 1) / 2  NOTE 3 Operations have to be run *,+,/
+ const addUp1 will have N amount of operations to run because it will add an operation for each number that makes up N
+
+SECTION BIG O NOTATIONS
+
+NOTE O(f(n)) if number of simple operations the comp has to do is eventually less than a constant times f(n) as n increases
+ f(n) can be linear (f(n) = n)  NOTE In between
+ f(n) can be quadradic (f(n) = n^2) NOTE Slowest
+ f(n) can be constant (f(n) = 1)  NOTE Fastest 
+ f(n) can be somethign different
+
+ const addUp1 O(n) - Number of operations is bounded by multiple of n
+ const addUp2 O(1) - always 3 operations 
+ const upAndDown O(n)- Number of operations is bounded by multiple of n
+ const printAllPairs O(n^2) - O(n) nested inside O(n)
+ const logAtLeast5 O(n) - Number of operations is bounded by multiple of n
+ const logAtMost5 O(1) - At most it would be O(5) => O(1)
+
+ NOTE  Contants 
+ 1. Arithmetic operations are constant 1 + 1 = 10000 + 100000
+ 2. Variable assignemnt is constant
+ 3. Accessing elements in array or object by key or index is constant
+ 4. In a loop the complexity is the length of the loop
+
+SECTION Determining space complexities
+
+ NOTE Basics
+ 1. Most primitives (boolean,numbers,undefined,null) are constant space
+ 2. Strings require O(n) space where n is the string length
+ 3. Reference types are generally O(n) where n is length of array or number of keys in obj
+
+ const sum O(1) - regardless of size of array there are only 2 numbers being used to take up space. 
+ const double O(n) - array length will be returned just be recreated with arithmetic which is O(2n) => O(n)
+
+SECTION Logarithms
+
+ What is a log?
+
+ NOTE log^2(8) = 3 => 2 to the what power equals 8
+  Logarithm of a number roughly  measures the number of times you can divide that number by 2 before you get <= 1
+ EXAMPLES 
+ log(8) = 3  => 8 / 2 = 4 / 2 = 2 / 2 = 1
+ log(25) = 4.64 => 25 / 2 = 12.5 / 2 = 6.25 / 2 = 3.125 / 2 = 1.56 / 2 = .78
+
+ Logarithm complexity
+ O(log n) is great === O(1)
+
+
+SECTION Big O of Objects 
+
+Insertion  - O(1)
+Removal  - O(1)
+Access  - O(1)
+Searching  - O(n)
+
+Methods 
+
+.keys - O(n)
+.values - O(n)
+.entries - O(n)
+.hasOwnProperty - O(1)
+
+const instructor = {
+    firstName: 'Kelly',
+    isInstrucor: true,
+    favoriteNumbers: [1, 2, 3, 4]
+}
+
+SECTION Big O of Arrays
+
+Insertion  - depends if its beginning or end of array
+Removal  - depends if its beginning or end of array
+Access  - O(1)
+Searching  - O(n)
+
+push and pop always faster than shift and unshift
+
+.push - O(1)
+.pop - O(1)
+.shift - O(n)
+.unshift - O(n)
+.concat - O(n)
+.slice - O(n)
+.splice - O(n)
+.sort - O(n * log N)
+.map,.sort,.filter,reduce,.forEach etc - O(n)
+
+
+const names = ["John", "Billy", "Bob"]
+
+
+

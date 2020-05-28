@@ -1,0 +1,41 @@
+*************************************
+RECURSION
+*************************************
+
+NOTE a process that calls itself
+
+SECTION Call Stack
+    1. There is a data structure that manages what happens when a function is invoked
+    2. Uses a Stack data structure which means anytime a function is invoked it is placesd or (pushed) to the top of the call Stack
+    3. When js sees return or when func ends the compiler will remove (pop) from the top of stack
+    4. Recursive functions continue to push functions on to the call stack.
+
+SECTION How Recursive functions work
+    1. There must be a base case (the condition when the recursion ends)
+    2. Each time you call the recursive function the inputs or params should be different
+
+SECTION Pitfalls with Recursion
+    1. Wrong or no base case which causes infinite loop
+    2. Forgetting to return or returning the wrong thing
+
+SECTION Helper method Recursion
+    1. An outer function that calls a recursive function within that function
+    2. Useful when compiling an array
+
+const collectOddValues = array => {
+    let result = []
+    // The helper will do the populating of result with odd numbers
+    const helper = input => {
+        if(input.length === 0) return
+        if(input[0] % 2 !== 0) result.push(input[0])
+        helper(input.slice(1))
+    }
+
+    helper(array)
+
+    return result
+}
+
+SECTION Pure Recursion
+    1. Function itself is self container and is recursive
+    2. Use slice, spread, and concat to make copies of arrays so you dont have to mutate them

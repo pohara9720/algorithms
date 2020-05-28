@@ -1,0 +1,233 @@
+*************************************
+APPROACH TO SOLVING PROBLEMS
+*************************************
+ 
+ SECTION Understanding the problem
+    1. Restate the problem in your own words
+    2. What are the inputs or parameters?
+    3. What are the outputs or return value?
+    4. Can outputs be determined from the inputs?
+    5. How should I label important pieces of data that are part of the problem?
+
+ NOTE Write a function that takes 2 numbers and returns their sum
+    1. Restate the problem in your own words
+        - Implement addition
+    2. What are the inputs or parameters?
+        - ints? 
+        - floats? 
+        - strings for large numbers?
+    3. What are the outputs or return value?
+        - ints? 
+        - floats? 
+        - strings?
+    4. Can outputs be determined from the inputs?
+        - What if less that 2 or more than 2 params are given? What should be returned
+    5. How should I label important pieces of data that are part of the problem?
+        - name of function?
+        - name of arguments?
+        - name of return value?
+
+
+ SECTION Explore concrete examples
+    1. Start with simple examples
+    2. Progress to more complex examples
+    3. Explore examples with empty inputs
+    4. Explore examples with invalid inputs
+    
+ NOTE Write a function which takes a string and returns counts of each character in the string
+    - charCount('aaaa') => { a:4 } 
+    - charCount('hello) => { h:1, e:1, l:2, o:1 }
+    - charCount('My phone number is 213213123') // Do we return spaces? numbers?
+    - charCount('Hello hi') => Do we distinguish capitals?
+    - charCount("") => what do we return?
+    - charCount({number:1,boolean:false}) => what do we return
+
+ SECTION Break it down
+    1. Explicitly write out the steps you need to take
+
+ NOTE Write a function which takes a string and returns counts of each character in the string
+
+    const charCount = (str) => {
+        - make object to return at end
+        - loop over string, for each character...
+            - lower case characters
+            - if char is a key in obj add one to counts
+            - if char is not in obj create and set to 1
+            - if char is something besides number/letter disregard
+        - return object
+    }
+
+ SECTION Solve/Simplify
+
+ NOTE Write a function which takes a string and returns counts of each character in the string
+
+    const charCount = (str) => {
+        let result = {}
+        const lower = str.toLowerCase()
+        lower.split('').forEach((x,i) => {
+            if(result[x] > 0){
+                result[x] ++
+            }else{
+                result[x] = 1
+            }
+        })
+        return result
+    }
+
+
+
+ SECTION Review/Refactor
+    1. Can you check the result?
+    2. Can you get the results another way?
+    3. Can you understand it at a glance?
+    4. Can you use the result or method for anothe problem?
+    5. Can you improve the performance?
+    6. Can you think of ways to refactor?
+    7. How have others solved this?
+
+     const charCount = (str) => {
+        let result = {}
+        const lower = str.toLowerCase()
+        lower.split('').forEach((x,i) => {
+            if(/[a-z0-9]/.test(x)){
+                if(result[x] > 0){
+                result[x] ++
+                } else{
+                    result[x] = 1
+                }
+            }
+        })
+        return result
+    }
+
+
+*************************************
+PATTERNS TO SOLVING PROBLEMS
+*************************************
+SECTION Frequency Counter
+    - This pattern uses objects or sets to collect values and frequencies
+    - NOTE This can often avoid the need for nested loops O(n^2) with arrays and strings
+    - Nested loops are much worse than 2 loops running seperate of eachother
+    
+    - REVIEW - Write a function called 'same' that will take 2 arrays and return a boolean describing 
+    if every value in array 1 squared equals array2. Frequency of values must be the same
+    IE: same([1,2,3],[4,1,9]) => true
+        same([1,2,3],[1,9]) => false
+        same([1,2,1],[4,4,1]) => false (must be same frequency)
+
+    // BAD EXAMPLE indexOf runs a loop
+    const same = (arr1,arr2) => {
+        if(arr1.lenght !== arr2.length){
+            return false
+        }
+        arr1.map((x,i) => {
+            const correctIdx = arr2[x ** 2]
+            if(correctIdx === -1){
+                return false
+            }
+            arr2.splice(correctIdx,1)
+        })
+        return true
+    }
+
+    // O(n) EXAMPLE
+    const same = (arr1, arr2) => {
+        if(arr1.length !== arr2.length){
+            return false;
+        }
+        let frequencyCounter1 = {}
+        let frequencyCounter2 = {}
+        for(let val of arr1){
+            frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
+        }
+        for(let val of arr2){
+            frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1        
+        }
+        console.log(frequencyCounter1);
+        console.log(frequencyCounter2);
+        for(let key in frequencyCounter1){
+            if(!(key ** 2 in frequencyCounter2)){
+                return false
+            }
+            if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+                return false
+            }
+        }
+        return true
+    }
+
+SECTION Multiple Pointers
+    - This pattern creates pointers or values that correspond to an index or position and move towards a certain direction based on condition
+    - NOTE - Very efficient for solving problems wtih minimal space complexity
+
+    REVIEW - Write a function that takes a sorted array and will return an array of 2 numbers in array that sum to 0
+
+    // BAD EXAMPLE has O(n^2) loop inside a loop
+    const sumZero = (arr) => {
+        for(let i = 0; i < arr.length; i++){
+            for(let j = i+1; j < arr.length; j++){
+                if(arr[i] + arr[j] === 0){
+                    return [arr[i], arr[j]];
+                }
+            }
+        }
+    }
+
+    // O(n) EXAMPLE
+    const sumZero = (arr) => {
+        let left = 0
+        let right = arr.length - 1
+        while(left < right){
+            let sum = arr[left] + arr[right]
+            if(sum === 0){
+                return [arr[left],arr[right]]
+            } else if(sum > 0){
+                right --
+            } else{
+                left ++
+            }
+        }
+    }
+
+SECTION Sliding Window
+    - This pattern creates a window which can be an array or number from one position to another. Window increases or decreases based on conditions
+    - NOTE - Very useful for keeping track of a subset of data in an array/string
+
+    REVIEW - Write a function that accepts number array and n. Return maximum sum of n consecutive elements in array
+
+    // BAD EXAMPLE has O(n^2)
+    const maxSubarraySum = (arr, num) => {
+        if ( num > arr.length){
+            return null;
+        }
+        var max = -Infinity;
+        for (let i = 0; i < arr.length - num + 1; i ++){
+            temp = 0;
+            for (let j = 0; j < num; j++){
+            temp += arr[i + j];
+            }
+            if (temp > max) {
+            max = temp;
+            }
+        }
+        return max;
+    }
+
+maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+
+
+SECTION Divide and Conquer
+    - This pattern involves dividing data set into smaller chunks and repeating process with subdata
+    - NOTE This can greatly decrease time complexity
+
+    REVIEW - Given sorted array of ints and a value, return idx of value in array
+
+    // BAD EXAMPLE O(n) Linear search
+    const search = (arr,num) => {
+        arr.map((x,i) => {
+            if(x === num){
+                return i
+            }
+        })
+    }

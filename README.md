@@ -1,10 +1,4 @@
-# BinarySearch
+# Algorithms
 
-### This is an example of using a Binary Tree search to try and guess an animal you're thinking of by narrowing down answers
+### This repo is meant for reference purposes. It contains notes and docs on commonly used problem solving patterns and tested algorithm implentations trying to give the best big o notation 
 
-#### to play clone the repository 
-#### think of an animal
-#### run the command nodemon app.js 
-#### answer the questions when prompted 
-
-### this repo also contains examples of various other algorithms

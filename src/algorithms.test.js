@@ -3,8 +3,7 @@ import {
     sumRange,
     collectOddValuesHelper,
     collectOddValuesPure,
-    recursiveFactorial,
-    iterativeFactorial,
+    factorial,
     anagram,
     sameFrequency,
     countUniqueValues,
@@ -14,5 +13,17 @@ import {
     maxSubarraySum,
     minSubarrayLen,
     findLongestSubstring,
-    binarySearch
+    binarySearch,
+    fib,
+    power,
+    productOfArray,
+    recursiveRange,
+    reverse,
+    someRecursive,
+    isPalindrome,
+    flatten,
+    capitalizeFirst,
+    nestedEvenSum,
+    stringifyNumbers,
+    collectStrings
 } from './algorithms'

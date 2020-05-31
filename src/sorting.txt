@@ -1,0 +1,61 @@
+*************************************
+SORTING
+*************************************
+
+NOTE - There are many sorting algorithms and will have pros and cons and better or worse depending on the situation
+
+SECTION Built in js sort method 
+    1. It is unreliable when it works with numbers vs strings because its based on unicodes. It converts everything to strings first
+    2. You can write a comparator function to pass the sort method
+
+    const sortAscending = (array) => array.sort((num1,num2) => num1 - num2)
+    If num1 - num2 returns a negative value than num1 comes before num2
+    if num1 - num2 returns a positive value than num2 comes before num1
+
+    const sortDescending = (array) => array.sort((num1,num2) => num2 - num1)
+    If num1 - num2 returns a negative value than num1 comes before num2
+    if num1 - num2 returns a positive value than num2 comes before num1
+
+    const sortByLength = (array) => array.sort((str1,str2) => str1.length - str2.length)
+    If num1 - num2 returns a negative value than num1 comes before num2
+    if num1 - num2 returns a positive value than num2 comes before num1
+
+SECTION Bubble sort 
+    1. Not commonly used 
+    2. Not extremely efficient
+    3. Sort where larger values bubble to the top
+    4. Repeatedly iterates through and swaps with next idx based on if it is greater of less than
+
+SECTION Selection sort
+    1. Similar to bubble but it looks for smallest value and puts it in the front while iterating
+    2. O(n^2) complexity not efficient
+
+SECTION Insertion sort
+    1. Gradually creates a larger left portion that is always sorted
+    2. Can be efficicent depending on situation
+    3. Time complexity is similar to others above O(n^2)
+
+SECTION Merge sort
+    1. Works by decomposing array into smaller arrays then building up to new sorted array
+    2. Its best to define a func that merges 2 sorted arrays refer to `merge` func in algo.js
+    3. The merge function should use all elements in either array and should not modify the parameters passed
+    4. O(n log n) time complexity. Best you can get in a sorting function assuming theres no advantages to mostly sorted data
+    5. O(n) space complexity. Takes up more space than the simpler algorithms
+
+SECTION Quick sort
+    1. Like merge sort it takes advantages of an array of 1 already being sorted.
+    2. It works by selecting a pivot point and finding the index where the pivot should end up in a sorted array
+    3. Pivots interates keeping track of all numbers that are less than pivot and after iteration it inserts pivot at index above the amount of numbers less than pivot
+    4. Its best to define a pivot function that returns index of pivot and SHOULD NOT create new array refer to `pivot` func in algos.js
+    5. O(n log n) time complexity
+    6. O(log n) space complexity
+
+SECTION Radix Sort
+    1. Does not make comparisons 
+    2. It exploits the fact that info about the size of the number is encoded in the number of digits
+    3. Its best to create a getDigit func that return num at given position refer to getDigit func in algo.js
+    4. Its best to create a digitCount func that returns how many digits are in num refer to digitCount in algo.js
+    5. Its best to create a mostDigits func that returns which num has most digits refer to mostDigits in algo.js
+    6. O(nk) time complexity
+    7. O(n + k) space complexity
+    8. The number of digits in numbers being sorted will effect time and space ie: and array with largest number 111 will run faster than one with 1111111111

@@ -1,0 +1,19 @@
+*************************************
+DATA STRUCTURES
+*************************************
+
+
+NOTE - Collections of values, the relationships between them and funcs or operations that can be applied to that DATA
+
+SECTION Classes 
+    1. A blueprint for creating objects with predefined properties and methods
+    2. New objects are created by using constructor method
+    3. Instance methods - methods provide functionality that pertains to single instance
+    4. Class methods - Methods that are called without instantiating their class. Often used to create utility functions
+
+SECTION Singly Linked Lists
+    1. Data structure that contains a head, tail and length property
+    2. Linked lists consists of nodes, and each node has a value and a pointer to another node or null
+    3. There is no index
+    4. Random access is not allowed
+    5. Having no index makes it easier to insert and remove 

@@ -1,0 +1,16 @@
+*************************************
+SEARCHING
+*************************************
+
+SECTION Linear Search on arrays
+    1. Look at each index to see if it matches what it is you're looking for.
+        - indexOf
+        - includes
+        - find
+        - findIndex
+
+SECTION Binary Search on sorted arrays
+    1. Data must be sorted for binary search to work
+    2. Determines if target is greater or less than middle and uses that as new chunk to search 
+    3. O(log n) big o notation
+

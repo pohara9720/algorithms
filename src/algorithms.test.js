@@ -25,5 +25,19 @@ import {
     capitalizeFirst,
     nestedEvenSum,
     stringifyNumbers,
-    collectStrings
+    collectStrings,
+    linearSearch,
+    sortAscending,
+    sortDescending,
+    sortByLength,
+    selectionSort,
+    bubbleSort,
+    merge,
+    mergeSort,
+    quickSort,
+    pivot,
+    getDigit,
+    digitCount,
+    mostDigits,
+    radixSort
 } from './algorithms'

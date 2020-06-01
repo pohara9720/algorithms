@@ -16,4 +16,41 @@ SECTION Singly Linked Lists
     2. Linked lists consists of nodes, and each node has a value and a pointer to another node or null
     3. There is no index
     4. Random access is not allowed
-    5. Having no index makes it easier to insert and remove 
+    5. Having no index makes it easier to insert and remove
+
+SECTION Doubly Linked Lists
+    1. Similar to Singly linked list except instead of just keeping track of next we also keep track of prev
+    2. No indexes
+    3. No random access
+    4. Every node points to next and previous node or null (tail & head)
+    5. These take up more memory than a Singly linked list
+
+SECTION Stacks
+    1. Data collection structure that follows LIFO (last in first out)
+    2. The last element added to a stack will be the first element removed from the stack
+    3. Commonly used for managing function invocations
+    4. Undo and redo functionality
+    5. Routing (history object is treated as a stack)
+    6. Time complexity must be constant when writing stacks and methods
+
+SECTION Queues
+    1. Data collection structure that follows FIFO (first in first out)
+
+SECTION Trees
+    1. A data structure that consist of nodes in a parent/child relationships
+    2. Trees on non-linear vs lists which are linear
+    3. Root is top node in a tree
+    4. Child- A node connected directly to another node moving away from the Root
+    5. Parent - converse notion of a child
+    6. Siblings - a group of nodes with the same parent
+    7. Leaf - node with no children
+    8. Edge - connection between nodes
+    9. Lots of applications (html dom,ai,abtract syntax tree,network routing,folders in a os)
+    10. ALOT of types of trees
+
+SECTION Binary Trees
+    1. Each node can at most have 2 children
+    2. Every node to the left of the parent node is always less than the parent
+    3. Every node to the right of the parent node is always greater than the parent
+    4. It is very quick to search when sorted by the criteria above
+

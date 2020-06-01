@@ -617,5 +617,13 @@ const validateBrackets = (string) => {
         0);
 }
 
-
+//Given array of 2 strings return matching values (avoiding .includes removes the O(n^2) complexity)
+const findIntersection = array => {
+    let count1 = {}
+    let results = []
+    const [right, left] = array
+    right.split(',').forEach(x => count1[x] = 1)
+    left.split(',').map(x => count1[x] ? results.push(x) : null)
+    return results
+}
 

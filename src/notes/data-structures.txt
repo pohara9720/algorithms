@@ -54,3 +54,11 @@ SECTION Binary Trees
     3. Every node to the right of the parent node is always greater than the parent
     4. It is very quick to search when sorted by the criteria above
 
+SECTION Tree Traversal
+    1. Means of visiting all nodes in a tree. Since it is non-linear this can be done multiple ways
+    2. Breadth-First-Search - Working across the tree sideways to look for value (utilizes a queue)
+        a. If you have a wide tree it could lead to alot more space complexity
+        b. If you have a deep or long tree this is a better space complexity (BETTER)
+    3. Depth-First-Search - Working down the tree to look for value (3 ways)
+        a. Less space is taken up when you have a large wide tree (BETTER)
+        b. More space when you have a deep or long tree

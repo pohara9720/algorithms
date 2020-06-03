@@ -5,6 +5,13 @@
  * ***************************
 */
 
+import {
+    breadthFirstSearch,
+    depthFirstSearchPreorder,
+    depthFirstSearchPostorder,
+    depthFirstSearchInOrder
+} from "./tree-traversal";
+
 class TreeNode {
     constructor (value) {
         this.value = value
@@ -57,6 +64,20 @@ class BinarySearchTree {
         if (!found) return undefined;
         return current;
     }
+    BFS() {
+        breadthFirstSearch()
+    }
+    DFSPreOrder() {
+        depthFirstSearchPreorder()
+    }
+    DFSPostOrder() {
+        depthFirstSearchPostorder()
+    }
+    DFSInOrder() {
+        depthFirstSearchInOrder()
+    }
 }
 
 export const tree = new BinarySearchTree()
+
+

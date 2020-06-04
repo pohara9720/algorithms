@@ -62,3 +62,22 @@ SECTION Tree Traversal
     3. Depth-First-Search - Working down the tree to look for value (3 ways)
         a. Less space is taken up when you have a large wide tree (BETTER)
         b. More space when you have a deep or long tree
+
+SECTION Heaps
+    1. Type of tree
+    2. Many types of Heaps
+    3. Max Binary Heap - parents nodes are always LARGER than the children
+    4. Min Binary Heap - parent nodes  are always SMALLER than the children
+    5. Each parent has at most 2 nodes
+    6. A binary heap is as compact as possible. Every left and right is filled before moving down
+    7. Priority Queue - Retrieving item in heap based on p
+    
+SECTION Hash Table
+    1. Used to store key value pairs
+    2. They are like arrays but keys are not ordered
+    3. Hash tables are FAST
+    4. Hash functions 
+        a. need to be fast! (constant time)
+        b. outputs should be uniformly distributed
+        c. Needs to be deterministic (same input -> same output)
+        

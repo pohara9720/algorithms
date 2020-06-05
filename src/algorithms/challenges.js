@@ -1,7 +1,7 @@
 //Algorithms
 /** SECTION
  * ***************************
- * Additional algorithm practice from https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
+ * Additional algorithm practice from https://app.codility.com/programmers/lessons
  * ***************************
 */
 

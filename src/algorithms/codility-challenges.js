@@ -1515,6 +1515,7 @@ export const minAbsSum = (A) => {
     return minDiff;
 }
 
+
 // In a given array, find the subset of maximal sum in which the distance between consecutive elements is at most 6.
 export const numberSolitaire = (A) => {
     let i = 0;

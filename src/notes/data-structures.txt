@@ -81,3 +81,24 @@ SECTION Hash Table
         b. outputs should be uniformly distributed
         c. Needs to be deterministic (same input -> same output)
         
+SECTION Graphs
+    1. A graph consists of a finite set of vertices or nodes or points
+    2. Undirected graph - with a set of unordered pairs of these vertices (2 way connections/no direction associated)
+    3. Directed graph - with a set of ordered pairs for a directed graph (direction associated with edge)
+    4. Useful for 
+        a. Social Networking
+        b. Mapping
+        c. Routing algos
+        d. Visual Heirarchy
+        e. File systems optimazations
+    5. Vertex - a node of a graph
+    6. Edge - connection between nodes
+    7. Weighted/Unweighted - values assigned to distances between verticles (No values => unweighted / values => weighted)
+    8. Directed/Undirected - directions assigned to distanced between vertices
+    9. Traveral use cases
+        a. Peer to peer networking 
+        b. Web crawlers
+        c. Finding 'closest' (matches/recommendations)
+        d. Shortest path problem (GPS,Mazes,AI)
+    10. Depth first traveral - Prioritzing visiting children instead of siblings
+    11. Breadth first traversal - Prioritzing neighbors before visitng neighbors neighbors

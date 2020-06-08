@@ -70,3 +70,24 @@ export const findLongestSubstring = (string) => {
 
     return longest;
 }
+
+// return max length of subarray in array A thats sum equals k
+export const maxSubarraySumLength = (A, K) => {
+    let sum = 0
+    let count = 0
+    let maxCount = 0
+    for (let i = 0; i < A.length; i++) {
+        // If adding current element doesn't cross limit add it to current window 
+        if (sum + A[i] <= K) {
+            sum += A[i]
+            count++
+        } else if (sum !== 0) { // # Else, remove first element of current window and add the current element
+            sum = sum - A[i - count] + A[i]
+        }
+        // keep track of max length. 
+        maxCount = Math.max(count, maxCount)
+    }
+    return maxCount
+}
+
+

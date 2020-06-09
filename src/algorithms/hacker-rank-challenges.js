@@ -167,3 +167,12 @@ export const longestWord = S => {
     return longest
 }
 
+
+// Does each letter in string occur same amount of times 
+export const isValidString = S => {
+    let count = {}
+    S.split('').map(x => count[x] ? count[x]++ : count[x] = 1)
+    const values = Object.values(count).sort((a, b) => b - a)
+    const diff = values.reduce((_, c) => Math.abs(c - values[0]))
+    return diff <= 1
+}

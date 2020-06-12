@@ -1,0 +1,13 @@
+*************************************
+Dynamic Programming
+*************************************
+
+SECTION Dynamic Programming
+    1. A method for solving complex problems by breaking it down into simpler subproblems and storing those solutions 
+    2. Must have an Optimal Substructure - Its optimal solution can be contructed from optimal solutions of subproblems
+    3. Must have Overlapping Subproblems - It can be broken down into subproblems which are reused several times
+    4. Memoization = Storing the results of expensive function calls and returning cached result when input reappears
+
+SECTION Tabulation
+    1. Storing result of previous result in a table/array
+    2. Provides better space complexity

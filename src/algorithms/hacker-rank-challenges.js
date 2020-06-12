@@ -176,3 +176,5 @@ export const isValidString = S => {
     const diff = values.reduce((_, c) => Math.abs(c - values[0]))
     return diff <= 1
 }
+
+

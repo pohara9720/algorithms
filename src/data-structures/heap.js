@@ -84,7 +84,7 @@ class QueueNode {
 }
 
 //REVIEW Priority Queue
-class PriorityQueue {
+export default class PriorityQueue {
     constructor () {
         this.values = [];
     }

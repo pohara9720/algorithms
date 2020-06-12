@@ -1,0 +1,13 @@
+*************************************
+DIJKSTRAS ALGORITHM
+*************************************
+
+SECTION Dijkstras Algo
+    1. Most widely used algorithms around
+    2. It finds the shortest path between 2 vertices in a graph (fastest way from point A and B)
+
+SECTION Approach 
+    1. Pick the node with the smallest known distance to visit first
+    2. Once we have the node look at each of its neighbors
+    3. For each neighboring node, calculate distance by summing edges that lead to the target node
+    4. If the new total distance is less than the previous total, we store the new shorter distance
